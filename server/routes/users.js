@@ -6,6 +6,6 @@ var router = express.Router();
 // http handlers from userController
 const userController = require('../controllers/userController')
 
-router.get('/signup', userController.signup);
+router.post('/signup', userController.signup);
 
 module.exports = router;
