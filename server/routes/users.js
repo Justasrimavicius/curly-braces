@@ -2,8 +2,10 @@ var express = require('express');
 var router = express.Router();
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.json({users: [{name: 'Timmy'}]});
-});
+
+// http handlers from userController
+const userController = require('../controllers/userController')
+
+router.get('/signup', userController.signup);
 
 module.exports = router;

@@ -1,0 +1,22 @@
+.FirstAuthView{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.FirstAuthView h1{
+    font-size: 3rem;
+}
+.FirstAuthView-buttons-div{
+        margin-top: 20px;
+}
+.FirstAuthView-buttons-div button{
+    width: 100px;
+}
+.FirstAuthView h4{
+    margin-bottom: 0;
+}
+.FirstAuthView > button{
+    width: 330px;
+}

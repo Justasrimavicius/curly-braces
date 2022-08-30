@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 
 import './Styles/mainStyles.css';
-
+import './Styles/FirstAuthView.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
