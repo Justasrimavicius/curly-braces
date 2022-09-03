@@ -6,12 +6,6 @@ function FirstAuthView() {
   const [loginView, loadLoginView] = useState(null);
 
   const [succesfulSignup, SetSuccesfulSignup] = useState(null);
-  // function Signup(){
-  //   fetch('http://localhost:8080/signup')
-  //     .then(result=>{
-  //       console.log(result);
-  //     })
-  // }
 
   function SignupFormSubmit(){
     const form = document.querySelector('.firstAuthView-forms.signup form');
@@ -60,9 +54,6 @@ function FirstAuthView() {
   function LoginFormSubmit(){
     const form = document.querySelector('.firstAuthView-forms.login form');
 
-    const username = document.querySelector('#username');
-
-    const password = document.querySelector('#password');
     form.submit();
   }
 
@@ -120,7 +111,6 @@ function FirstAuthView() {
     } else if(signupView==null && loginView==null){
       return(
         <div className="FirstAuthView">
-          <h1>CurlyBraces</h1>
           <h2>Learn data structures, algorithms, javascript methods and more!</h2>
           <div className="FirstAuthView-buttons-div">
             <button onClick={()=>{loadLoginView(true)}}>Login</button>

@@ -27,21 +27,21 @@ exports.login = (req,res,next)=>{
         console.log(user);
     if(!user){
         console.log('------------_ERRRRROR_-------------------');
-        res.redirect('https://auth-user-app.netlify.app/error/2');
+        res.redirect('http://localhost:3000/error/2');
         return;
     }
     console.log('----------------');
     console.log(user)
     console.log(user._id);
     passport.authenticate("local", {
-        successRedirect: "https://auth-user-app.netlify.app/home/"+user._id,
-        failureRedirect: "https://auth-user-app.netlify.app/error/1"
+        successRedirect: "http://localhost:3000/home/user-"+user._id,
+        failureRedirect: "http://localhost:3000/error/1"
     })(req,res,next)
     })
 };
 
-exports.getUser = (req,res,next)=>{
-    const id = req.url.slice(-24);
+exports.userInfo = (req,res,next)=>{
+    const id = req.params.id;
     userModel.findOne({_id: id},(err,user)=>{
         if(err)return;
         res.json(user);

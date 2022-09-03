@@ -12,7 +12,7 @@
     text-align: center;
 }
 .FirstAuthView-buttons-div{
-        margin-top: 20px;
+    margin-top: 20px;
 }
 .FirstAuthView-buttons-div button{
     width: 100px;
@@ -80,7 +80,6 @@
     left: 50%;
     transform: translateX(-50%);
     margin-top: -30vh;
-
 
     background-color: rgb(46, 46, 64);
     font-size: 3rem;

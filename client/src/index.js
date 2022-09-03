@@ -1,6 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
 import FirstAuthView from './Routes/FirstAuthView';
+import Home from './Routes/Home';
+import Error from './Routes/Error';
+import Footer from './Components/Footer';
+
 import {
   BrowserRouter,
   Routes,
@@ -9,15 +14,22 @@ import {
 
 import './Styles/mainStyles.css';
 import './Styles/FirstAuthView.css';
+import './Styles/HomeStyles.css';
+import './Styles/Header.css';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode>
-  <BrowserRouter>
-    <Routes>
-      <Route path='/' element ={<FirstAuthView />} />
-    </Routes>
-  </BrowserRouter>
-  // </React.Strict Mode>
+    <BrowserRouter>
+
+        <Routes>
+          <Route path='/' exact element ={<FirstAuthView />} />
+          <Route path='/home/user-:id' element ={<Home />} />
+          <Route path='/error/:errorid' element ={<Error />} />
+        </Routes>
+
+    <Footer />
+
+    </BrowserRouter>
 );
 
