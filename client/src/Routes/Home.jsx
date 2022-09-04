@@ -1,11 +1,15 @@
 import React from 'react';
 import { useEffect } from 'react';
+import { useState } from 'react';
 
 import Header from '../Components/Header';
 
-import MyContext from '../Contexts';
+// import MyContext from '../Contexts';
 
-import { useState } from 'react';
+import HomeAlgorithmsSection from '../Components/HomeAlgorithmsSection';
+import HomeDataStructuresSection from '../Components/HomeDataStructuresSection';
+import HomeJavascriptSection from '../Components/HomeJavascriptSection';
+
 function Home() {
 
     const [username, setUsername] = useState('');
@@ -31,25 +35,19 @@ function Home() {
 
     return (
         <React.Fragment>
-            <MyContext.Provider value={{}}>
+            {/* <MyContext.Provider value={{}}> */}
             <Header username={username} homeView={{homeContent, setHomeContent}}/>
             <div className='home'>
                 {homeContent=='javascript' ? 
-                <div className='home-javascript-section'>
-                    Javascript
-                </div>
+                <HomeJavascriptSection />
                 :
                     homeContent=='dataStructures' ?
-                    <div className='home-dataStructures-section'>
-                        Data Structures
-                    </div>
+                    <HomeDataStructuresSection />
                     :
-                        <div className='home-algorithms-section'>
-                            Algorithms
-                        </div>
+                    <HomeAlgorithmsSection />
                 }
             </div>
-            </MyContext.Provider>
+            {/* </MyContext.Provider> */}
         </React.Fragment>
 
     );

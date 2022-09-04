@@ -16,6 +16,9 @@ import './Styles/mainStyles.css';
 import './Styles/FirstAuthView.css';
 import './Styles/HomeStyles.css';
 import './Styles/Header.css';
+import './Styles/HomeJavascript.css';
+import './Styles/HomeDataStructures.css';
+import './Styles/HomeAlgorithms.css';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
