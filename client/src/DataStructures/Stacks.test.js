@@ -1,4 +1,3 @@
-import { internal_resolveProps } from "@mui/utils";
 import StackConstructor from "./Stacks";
 
 describe('stack testing',function(){
