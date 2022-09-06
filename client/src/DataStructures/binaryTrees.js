@@ -25,7 +25,6 @@ class binaryTreeConstructor{
 
                     if(referenceHeadNode.left == null){
                         referenceHeadNode.left=nodeToInsert;
-                        console.log('inserted to left - ' + nodeToInsert.data)
                         return;
                     } else if(referenceHeadNode.left != null){
                         return insertNewNode(nodeToInsert, referenceHeadNode.left);
@@ -34,7 +33,6 @@ class binaryTreeConstructor{
                 } else if(nodeToInsert.data > referenceHeadNode.data){
 
                     if(referenceHeadNode.right == null){
-                        console.log('inserted to right - ' + nodeToInsert.data)
                         referenceHeadNode.right=nodeToInsert;
                         return;
                     } else if(referenceHeadNode.right != null){
@@ -51,27 +49,35 @@ class binaryTreeConstructor{
         levelTraversal = function(){
             let queue = new QueueConstructor();
             let traversedData = '';
+
+            if(this.root==null){
+                return traversedData;
+            }
+            // traversedData+= ` ${this.root.data}`;
+            queue.enqueue(this.root);
+            return traverseByLevel(queue.dequeue());
+
             function traverseByLevel(referenceHead){
-                if(referenceHead==null){
-                    return traversedData;
-                }
-
-
-                traversedData+=` ${referenceHead.data}`;
-                queue.dequeue();
                 if(referenceHead.left){
                     queue.enqueue(referenceHead.left);
                 }
                 if(referenceHead.right){
                     queue.enqueue(referenceHead.right);
                 }
+                
+                // for semanticity
+                if(traversedData==''){
+                    traversedData+=`${referenceHead.data}`;
+                } else {
+                    traversedData+=` ${referenceHead.data}`;
+                }
+
                 if(queue.isEmpty()){
                     return traversedData;
                 }
-                console.log(queue.dequeue())
+
                 return traverseByLevel(queue.dequeue());
             }
-            return traverseByLevel(this.root);
         }
 
     }

@@ -16,7 +16,7 @@ describe('breadth-first(level) traversal of a binary search tree',function(){
         const data = binaryTree.levelTraversal();
         expect(data).toBe('');
     })
-    it('main test with equal children on all nodes',function(){
+    it('nodes are inserted by level',function(){
         let binaryTree = new binaryTreeConstructor();
 
         binaryTree.insert(20);
@@ -29,5 +29,33 @@ describe('breadth-first(level) traversal of a binary search tree',function(){
 
         const traversedData = binaryTree.levelTraversal();
         expect(traversedData).toBe('20 10 30 5 15 25 35')
+    })
+    it('nodes inserted randomely',function(){
+        let binaryTree = new binaryTreeConstructor();
+
+        binaryTree.insert(50);
+        binaryTree.insert(10);
+        binaryTree.insert(7);
+        binaryTree.insert(22);
+        binaryTree.insert(40);
+        binaryTree.insert(30);
+        binaryTree.insert(1);
+
+        const traversedData = binaryTree.levelTraversal();
+        expect(traversedData).toBe('50 10 7 22 1 40 30')
+    })
+    it('all nodes have 2 children',function(){
+        let binaryTree = new binaryTreeConstructor();
+
+        binaryTree.insert(50);
+        binaryTree.insert(75);
+        binaryTree.insert(25);
+        binaryTree.insert(38);
+        binaryTree.insert(63);
+        binaryTree.insert(12);
+        binaryTree.insert(88);
+
+        const traversedData = binaryTree.levelTraversal();
+        expect(traversedData).toBe('50 25 75 12 38 63 88')
     })
 })
