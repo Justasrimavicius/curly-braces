@@ -1,6 +1,8 @@
 import React from 'react';
+import LevelOrderTraversal from './LevelOrderTraversal.jsx';
 
 require('../Photos/Stacks.png')
+
 
 function HomeDataStructuresSection() {
 
@@ -19,7 +21,13 @@ function HomeDataStructuresSection() {
                     </div>
                     <h6 className='implementation'>Implementation</h6>
                     <div className='ds-text'>
-                        Stacks in javascript can be basic arrays. They have these functions: push(), pop(), peek(), isEmpty(), printStack().
+                        Stacks in javascript can be basic arrays. Basic operations of stacks include: 
+                        <ul>
+                            <li>push()</li>
+                            <li>pop()</li>
+                            <li>isEmpty()</li>
+                            <li>printStack()</li>
+                        </ul>
                         Check out how all of them look like in a class constructor:
                         <img src={require('../Photos/Stacks.png')} height='auto' width='100%' alt='stacks-implementation'></img>
                         <h6 className='testing-h6'>Testing of this stack implementation on <a href='https://github.com/Justasrimavicius/curly-braces/blob/main/client/src/DataStructures/Stacks.test.js'>https://github.com/Justasrimavicius/curly-braces/blob/main/client/src/DataStructures/Stacks.test.js</a></h6>
@@ -33,7 +41,13 @@ function HomeDataStructuresSection() {
                     </div>
                     <h6 className='implementation'>Implementation</h6>
                     <div className='ds-text'>
-                        Queues in javascript can also, just like stacks, be basic arrays. They have these functions: enqueue(), dequeue(), peek(), isEmpty().
+                        Queues in javascript can also, just like stacks, be basic arrays. Operations of queues are:
+                        <ul>
+                            <li>enqueue()</li>
+                            <li>dequeue()</li>
+                            <li>peek()</li>
+                            <li>isEmpty()</li>
+                        </ul>
                         Check out how all of them look like in a class constructor:
                         <img src={require('../Photos/Queues.png')} height='auto' width='100%' alt='queues-implementation'></img>
                         <h6 className='testing-h6'>Testing of this queue implementation on <a href='https://github.com/Justasrimavicius/curly-braces/blob/main/client/src/DataStructures/Queues.test.js'>https://github.com/Justasrimavicius/curly-braces/blob/main/client/src/DataStructures/Queues.test.js</a></h6>
@@ -56,11 +70,38 @@ function HomeDataStructuresSection() {
                     </div>
                     <h6 className='implementation'>Implementation</h6>
                     <div className='ds-text'>
-                        Implementation of a linked list is a bit complicated because of it not having indexes. A linked list should have inserting
-                        and deleting functions at head and at given indexes:
+                        Implementation of a linked list is a bit complicated because of it not having indexes. A linked list should be able to:
+                        <ul>
+                            <li>Insert at head</li>
+                            <li>Insert at given index</li>
+                            <li>delete head</li>
+                            <li>delete at given index</li>
+
+                        </ul>
+                        These functions(and helper functions, just like print()) in javascript look like this:
                         <img src={require('../Photos/linkedLists1.png')} height='auto' width='100%' alt='linked-lists-implementation1'></img>
                         <img src={require('../Photos/linkedLists2.png')} height='auto' width='100%' alt='linked-lists-implementation2'></img>
-                        <h6 className='testing-h6'>Testing of this linked list implementation on <a href='https://github.com/Justasrimavicius/curly-braces/blob/main/client/src/DataStructures/Queues.test.js'>https://github.com/Justasrimavicius/curly-braces/blob/main/client/src/DataStructures/linkedLists.test.js</a></h6>
+                        <h6 className='testing-h6'>Testing of this linked list implementation on <a href='https://github.com/Justasrimavicius/curly-braces/blob/main/client/src/DataStructures/linkedLists.test.js'>https://github.com/Justasrimavicius/curly-braces/blob/main/client/src/DataStructures/linkedLists.test.js</a></h6>
+                    </div>
+                </div>
+                <div className='binary-tress'>
+                    <h3>Binary trees</h3>
+                    <div className='ds-text'>
+                        Binary trees, unlike stacks, queues or arrays, are not a linear data structure. Just like a linked list, it does not
+                        have indexes - it works by having a node, a left pointer and a right pointer.<br></br>
+                        <strong><em>A binary tree node can have 0, 1 or 2 children - it can point to the left, right or not point to anything(it does not have any children).</em></strong>
+                        You can traverse(go through nodes) of a binary tree in multiple ways: in-order, pre-order, post-order, or level-order:
+                        <ul>
+                            <li>In-order traversal is going to the left subtree first, then the root, than going to the right.</li>
+                            <li>Pre-order traversal is going to the root first, than going to the left, and then to the right.</li>
+                            <li>post-order traversal is going to the left first, than going to the right, and then to the root.</li>
+                            <li>level-order traversal goes through nodes by level starting at head(level 0), going to the first left children and then to the right children(level 1), so on and so forth..</li>
+                        </ul>
+                    </div>
+                    <h6 className='implementation'>Implementation</h6>
+                    <div className='ds-text'>
+                        In order to better understand binary trees, here is a visual representation of how they work:
+                        <LevelOrderTraversal />
                     </div>
                 </div>
             </div>
