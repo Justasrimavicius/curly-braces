@@ -4,6 +4,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    background-image: url('../Photos/low-poly-grid-haikei.svg');
+    background-position: top;
 }
 .FirstAuthView h1{
     font-size: 3rem;
@@ -31,13 +34,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-image: url('../Photos/low-poly-grid-haikei.svg');
+    background-position: top;
 }
 .firstAuthView-forms form{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: rgba(104, 104, 104, 0.484);
+    background-color: rgb(119, 119, 119);
     width: 50%;
     height: 40%;
     min-width: 220px;
@@ -70,6 +75,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+.signup form{
+    height: 50%;
 }
 .succesful-signup-popup{
     width: 100%;
