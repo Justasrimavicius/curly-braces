@@ -8,8 +8,8 @@ function LevelOrderTraversal() {
                 <h3>Level order traversal</h3>
                 <div>
                     <strong>Recap:</strong><br></br>
-                    The circles below are nodes. They point to either left, right or nothing.<br></br>
-                    A node contains data, a pointer to left and a pointer to right.<br></br>
+                    The circles below are nodes. They either point to left, right or nothing.<br></br>
+                    A node contains 2, 1 or 0 pointers and data.<br></br>
                     <strong>Color meanings:</strong><br></br>
                     <em style={{textDecoration:'underline'}}>Orange</em> color means the node has been stored in a queue.<br></br>
                     <em style={{textDecoration:'underline'}}>Green</em> color means the node has been read(data is outputed).<br></br>
@@ -26,14 +26,8 @@ function LevelOrderTraversal() {
             </div>
             <div className='level-order-traversal'>
                 <div className='level-order-traversal-data-visualisation'>
-                <div className='queue'>
-                        <div className='queue-1 queue-block'></div>
-                        <div className='queue-2 queue-block'></div>
-                        <div className='queue-3 queue-block'></div>
-                        <div className='queue-4 queue-block'></div>
-                        <div className='queue-5 queue-block'></div>
-                        <div className='queue-6 queue-block'></div>
-                    </div>
+                    <div className='queue'></div>
+                    <div className='level-traversal-output'>Output: </div>
                 </div>
                 <div className='binary-tree'>
                     <div className='level0'>
@@ -84,12 +78,17 @@ function LevelOrderTraversal() {
                             document.querySelectorAll('[data-id]').forEach(element=>{
                                 element.style.backgroundColor='aliceblue';
                             })
+                            document.querySelector('.level-traversal-output').innerText='Output: ';
                         }, 41000);
                         }
                     }}>Start traversing</button>
                 </div>
         
 
+            </div>
+            <div style={{textAlign:'center',marginBottom:'20px'}}>This is how a binary search tree looks like. There are various traversal methods(the method shown above
+                is level, or breadth-first, traversal), but the tree structure does not change - it can have only 1, 2 or 
+                0 children and data.
             </div>
         </div>
 

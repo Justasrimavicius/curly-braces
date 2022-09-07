@@ -5,12 +5,6 @@ import { useState } from 'react';
 import { Button } from '@mui/material';
 
 function Header(props) {
-    
-
-
-    useEffect(()=>{
-        console.log(props.homeView)
-    },[])
     return (
         <header>
             <span>Curly Braces</span>

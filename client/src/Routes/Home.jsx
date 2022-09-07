@@ -23,15 +23,9 @@ function Home() {
             result.json()
               .then(finalData=>{
                 setUsername(finalData.username);
-                console.log(finalData);
             })
           })
     },[])
-
-    useEffect(()=>{
-        console.log(homeContent)
-    },[homeContent])
-
 
     return (
         <React.Fragment>

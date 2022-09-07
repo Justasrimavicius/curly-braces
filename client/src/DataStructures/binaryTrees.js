@@ -83,6 +83,7 @@ class binaryTreeConstructor{
         // this function is purely for this project to create the visuals
         levelTraversalForVisuals = function(){
             let changeColorObj = []; // nodes with their data(id in the dom) and color will be stored here in order
+
             let queue = new QueueConstructor();
             let traversedData = '';
 
@@ -90,14 +91,34 @@ class binaryTreeConstructor{
                 return traversedData;
             }
             changeColorObj.push({id:`${this.root.data}`,color:'green'});
-            console.log(changeColorObj);
             traversedData+= ` ${this.root.data}`;
             queue.enqueue(this.root);
 
             traverseByLevel(queue.dequeue());
-            console.log(changeColorObj);
+
+            const Queue = document.querySelector('.queue'); // the visual queue block
+            const outputLine = document.querySelector('.level-traversal-output');
+            
             let coloringInterval = setInterval(() => {
                 let colorChangeOperation = changeColorObj.shift();
+                if(!document.querySelector(`[data-id='${colorChangeOperation.id}']`)){
+                    return clearInterval(coloringInterval);
+                }
+                if(colorChangeOperation.color=='orange'){
+                    const queueItem = document.createElement('div');
+                    queueItem.classList.add('queue-block');
+                    queueItem.innerText=`${colorChangeOperation.id}`;
+                    Queue.append(queueItem);
+                } else {
+                    const allQueueItems = Queue.childNodes;
+                    allQueueItems.forEach(element=>{
+                        if(element.innerText==colorChangeOperation.id){
+                            element.remove();
+                        }
+                    })
+                    outputLine.innerText+=` ${colorChangeOperation.id}`
+                }
+
                 document.querySelector(`[data-id='${colorChangeOperation.id}']`).style.backgroundColor=`${colorChangeOperation.color}`;
                 if(changeColorObj.length==0){
                     clearInterval(coloringInterval);
