@@ -58,4 +58,24 @@ describe('breadth-first(level) traversal of a binary search tree',function(){
         const traversedData = binaryTree.levelTraversal();
         expect(traversedData).toBe('50 25 75 12 38 63 88')
     })
+    it('nodes inserted according to the binary tree on the page(at home, data structures section)',function(){
+        let binaryTree = new binaryTreeConstructor();
+
+        binaryTree.insert(20);
+        binaryTree.insert(10);
+        binaryTree.insert(30);
+        binaryTree.insert(3);
+        binaryTree.insert(15);
+        binaryTree.insert(25);
+        binaryTree.insert(35);
+        binaryTree.insert(1);
+        binaryTree.insert(4);
+        binaryTree.insert(12);
+        binaryTree.insert(17);
+        binaryTree.insert(22);
+        binaryTree.insert(27);
+
+        let traversedData = binaryTree.levelTraversal();
+        expect(traversedData).toBe('20 10 30 3 15 25 35 1 4 12 17 22 27')
+    })
 })

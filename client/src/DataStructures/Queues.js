@@ -12,6 +12,9 @@ class QueueConstructor{
     peek = function(){
         return this.queueItems[this.queueItems.length-1];           // Show the last item in the queue without removing it
     }
+    peekFirst = function(){
+        return this.queueItems[0];
+    }
     isEmpty = function(){
         if(this.queueItems.length==0) { return true }               // Check if queue is empty
         else { return false }

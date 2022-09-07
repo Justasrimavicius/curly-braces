@@ -80,6 +80,49 @@ class binaryTreeConstructor{
             }
         }
 
+        // this function is purely for this project to create the visuals
+        levelTraversalForVisuals = function(){
+            let changeColorObj = []; // nodes with their data(id in the dom) and color will be stored here in order
+            let queue = new QueueConstructor();
+            let traversedData = '';
+
+            if(this.root==null){
+                return traversedData;
+            }
+            changeColorObj.push({id:`${this.root.data}`,color:'green'});
+            console.log(changeColorObj);
+            traversedData+= ` ${this.root.data}`;
+            queue.enqueue(this.root);
+
+            traverseByLevel(queue.dequeue());
+            console.log(changeColorObj);
+            let coloringInterval = setInterval(() => {
+                let colorChangeOperation = changeColorObj.shift();
+                document.querySelector(`[data-id='${colorChangeOperation.id}']`).style.backgroundColor=`${colorChangeOperation.color}`;
+                if(changeColorObj.length==0){
+                    clearInterval(coloringInterval);
+                }
+            }, 1500);
+
+            function traverseByLevel(referenceHead){
+                if(referenceHead.left){
+                    changeColorObj.push({id:`${referenceHead.left.data}`,color:'orange'});
+                    queue.enqueue(referenceHead.left);
+                }
+                if(referenceHead.right){
+                    changeColorObj.push({id:`${referenceHead.right.data}`,color:'orange'});
+                    queue.enqueue(referenceHead.right);
+                }
+                
+                if(queue.isEmpty()){
+                    return traversedData;
+                }
+                changeColorObj.push({id:`${queue.peekFirst().data}`,color:'green'});
+
+                return traverseByLevel(queue.dequeue());
+            }
+        }
+
     }
 
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import binaryTreeConstructor from '../DataStructures/binaryTrees';
-
 function LevelOrderTraversal() {
+    let alreadyTraversing = false;
     return (
         <div className='aligning-div'>
             <div className='level-order-traversal-explanation'>
@@ -37,41 +37,55 @@ function LevelOrderTraversal() {
                 </div>
                 <div className='binary-tree'>
                     <div className='level0'>
-                        <div className='root'>20</div>
+                        <div className='root' data-id='20'>20</div>
                     </div>
                     <div className='level1'>
-                        <div className='left-subtree'>10</div>
-                        <div className='right-subtree'>30</div>
+                        <div className='left-subtree' data-id='10'>10</div>
+                        <div className='right-subtree' data-id='30'>30</div>
                     </div>
                     <div className='level2'>
-                        <div className='left left-subtree'>3</div>
-                        <div className='right left-subtree'>15</div>
-                        <div className='left right-subtree'>25</div>
-                        <div className='right right-subtree'>35</div>
+                        <div className='left left-subtree' data-id='3'>3</div>
+                        <div className='right left-subtree' data-id='15'>15</div>
+                        <div className='left right-subtree' data-id='25'>25</div>
+                        <div className='right right-subtree' data-id='35'>35</div>
                     </div>
                     <div className='level3'>
-                        <div className='left left-subtree left-left-subtree'>1</div>
-                        <div className='right left-subtree left-left-subtree'>4</div>
-                        <div className='left left-subtree left-right-subtree'>12</div>
-                        <div className='right left-subtree left-right-subtree'>17</div>
-                        <div className='left right-subtree right-left-subtree'>22</div>
-                        <div className='right right-subtree right-left-subtree'>27</div>
+                        <div className='left left-subtree left-left-subtree' data-id='1'>1</div>
+                        <div className='right left-subtree left-left-subtree' data-id='4'>4</div>
+                        <div className='left left-subtree left-right-subtree' data-id='12'>12</div>
+                        <div className='right left-subtree left-right-subtree' data-id='17'>17</div>
+                        <div className='left right-subtree right-left-subtree' data-id='22'>22</div>
+                        <div className='right right-subtree right-left-subtree' data-id='27'>27</div>
                     </div>
                     <button onClick={()=>{
-                        // let binaryTree = new binaryTreeConstructor();
-                        // binaryTree.insert(20);
-                        // console.log('-----------')
-                        // binaryTree.insert(10);
-                        // binaryTree.insert(30);
-                        // binaryTree.insert(15);
-                        // binaryTree.insert(25);
-                        // binaryTree.insert(7);
-                        // binaryTree.insert(55);
-                        // binaryTree.insert(1);
-                        // binaryTree.insert(22);
+                        if(alreadyTraversing)return;
+                        else{
+                        alreadyTraversing=true;
+                        let binaryTree = new binaryTreeConstructor();
 
-                        // console.log(binaryTree);
+                        binaryTree.insert(20);
+                        binaryTree.insert(10);
+                        binaryTree.insert(30);
+                        binaryTree.insert(3);
+                        binaryTree.insert(15);
+                        binaryTree.insert(25);
+                        binaryTree.insert(35);
+                        binaryTree.insert(1);
+                        binaryTree.insert(4);
+                        binaryTree.insert(12);
+                        binaryTree.insert(17);
+                        binaryTree.insert(22);
+                        binaryTree.insert(27);
 
+                        binaryTree.levelTraversalForVisuals();
+
+                        setTimeout(() => {
+                            alreadyTraversing=false;
+                            document.querySelectorAll('[data-id]').forEach(element=>{
+                                element.style.backgroundColor='aliceblue';
+                            })
+                        }, 41000);
+                        }
                     }}>Start traversing</button>
                 </div>
         
