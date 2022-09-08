@@ -103,7 +103,7 @@ function HomeAlgorithmsSection() {
                             In the data structures section level traversal was already shown, which is the hardest, therefore i will not be implementing breadth first traversals here.
                             </span>
                             <h6>Binary search for sorted data in an array</h6>
-                            {/* <img src={require('../Photos/binarySearch.png')} width='100%' height='auto' alt='bubble-sort-javascript'></img> */}
+                            <img src={require('../Photos/binarySearch.png')} width='100%' height='auto' alt='bubble-sort-javascript'></img>
                     </div>
                     
                 </div>
