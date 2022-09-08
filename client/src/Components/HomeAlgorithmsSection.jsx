@@ -12,7 +12,7 @@ function HomeAlgorithmsSection() {
                     non-linear data, and some on both. Here are some sorting algorithms examples:
                     <ul>
                         <li><strong>Bubble sort</strong>     - iterates through an array and replaces elements in order.</li>
-                        <li><strong>Selection sort</strong>  - finds the minimum element in an array, put it at a new array. Repeats.</li>
+                        <li><strong>Selection sort</strong>  - finds the minimum element in an array, puts it at a new array. Repeats.</li>
                         <li><strong>Merge sort</strong>      - uses Divide and Conquer aproach. Splits data into smaller peaces, then compares those peaces and merges them back together. </li>
                         <li><strong>Tree sort</strong>       - turns a linear data structure to a binary search tree and traverses it.</li>
                     </ul>
@@ -44,10 +44,69 @@ function HomeAlgorithmsSection() {
                             <h6>Bubble sort in javscript</h6>
                             <img src={require('../Photos/bubbleSort.png')} width='100%' height='auto' alt='bubble-sort-javascript'></img>
                     </div>
+                    <div className='merge-sort'>
+                        <h5>Merge sort</h5>
+                        <span>Merge sort is a more advanced algorithm. It splits the given array in half until the smallest units are reached. 
+                            Then it compares units and combines them in a sorting manner.
+                            <h6>Positives of merge sort</h6>
+                            <ul>
+                                <li>Time efficient</li>
+                                <li>Consistent run time</li>
+                            </ul>
+                            <h6>Negatives of merge sort</h6>
+                            <ul>
+                                <li>Takes up a lot of space for storing sub-arrays</li>
+                                <li>Is slower for smaller tasks compared to other algorithms</li>
+                            </ul>
+                            <h6>Big O notation</h6>
+                            <strong><em>Time complexity: O(n*log(n))</em></strong><br></br>
+                            <strong><em>Space complexity: O(n)</em></strong>
+                        </span>
+
+                            <h6>Merge sort in javscript</h6>
+                            <img src={require('../Photos/mergeSort.png')} width='100%' height='auto' alt='merge-sort-javascript'></img>
+                    </div>
                 </div>
             </div>
-            <div className='queues'>
 
+            <div className='searching-algorithms'>
+                <h3>Searching algorithms</h3>
+                <div className='a-text'>
+                    Searching algorithms are the next type of algorithms worth knowing.
+                    Some searching algorithms work only with sorted data structures(jump search, binary search, ...), others work for any order.
+                    Examples of searching algorithms:
+                    <ul>
+                        <li><strong>Linear search</strong>     - checks each elements in a list until the needed element is found.</li>
+                        <li><strong>Binary search</strong>      - searches elements in a sorted data structure(binary tree, array).</li>
+                        <li><strong>Jump search</strong>      -  works only on sorted data structures. Jumps through a certain amount of elements, therefore is aprox. two times faster then linear search.</li>
+                    </ul>
+                    <div className='binary-search'>
+                        <h5>Binary search</h5>
+                        <span>
+                            Binary search is a great algorithm for element searching in sorted data structures. It can work by searching an array(middle point beeing the root) 
+                            or a binary tree(the node on level 0 beeing the root). On both of these structures, going left means lower values and going right means higher values.
+                            <h6>Positives of binary search</h6>
+                            <ul>
+                                <li>Fast search time.</li>
+                                <li>Doesnt need additional space.</li>
+                            </ul>
+                            <h6>Negatives</h6>
+                            <ul>
+                                <li>Works only with sorted data.</li>
+                            </ul>
+                            <h6>Big O notation</h6>
+                            <strong><em>Time complexity: O(log(n))</em></strong><br></br>
+                            <strong><em>Space complexity: O(1)</em></strong><br></br>
+                        </span>
+
+                            <span>Mainly for binary trees, binary search has different variants: breadth first(preoder, inorder, postorder) and depth first(level order) traversals.
+                            In the data structures section level traversal was already shown, which is the hardest, therefore i will not be implementing breadth first traversals here.
+                            </span>
+                            <h6>Binary search for sorted data in an array</h6>
+                            {/* <img src={require('../Photos/binarySearch.png')} width='100%' height='auto' alt='bubble-sort-javascript'></img> */}
+                    </div>
+                    
+                </div>
             </div>
             <div style={{height:'6vh'}} className='filler-for-footer'></div>
         </div>
