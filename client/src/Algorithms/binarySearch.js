@@ -24,4 +24,4 @@ function binarySearch(array,searchValue){
     
 }
 
-export default binarySearch;
+module.exports = binarySearch;

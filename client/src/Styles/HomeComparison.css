@@ -1,0 +1,39 @@
+.home-comparison-section{
+    padding: 10px;
+}
+.home-comparison-section h5{
+    margin-top: 20px;
+    text-align: center;
+}
+.comparison-division{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+}
+.home-comparison-section img{
+    width: 100%;
+    max-width: 400px;
+    margin: 5px;
+}
+.comparison-elementSize,
+.comparison-mergeSort,
+.comparison-bubbleSort{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.comparison-elementSize h6{
+    height: 36px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.comparison-bubbleSort h4,
+.comparison-mergeSort h4,
+.comparison-elementSize h4{
+    display: flex;
+    justify-content: center;
+}

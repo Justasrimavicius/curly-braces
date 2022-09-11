@@ -63,3 +63,9 @@ footer{
 .error Button:focus{
     outline: none;
 }
+.divider-fullWidth{
+    width: 100vw;
+    height: 3px;
+    margin: 10px 0px 10px -10px;
+    background-color: gray;
+}

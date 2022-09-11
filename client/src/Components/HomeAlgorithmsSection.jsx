@@ -40,7 +40,6 @@ function HomeAlgorithmsSection() {
                             <strong><em>Time complexity: O(n*n)</em></strong><br></br>
                             <strong><em>Space complexity: O(1)</em></strong>
                         </span>
-
                             <h6>Bubble sort in javscript</h6>
                             <img src={require('../Photos/bubbleSort.png')} width='100%' height='auto' alt='bubble-sort-javascript'></img>
                     </div>
@@ -78,7 +77,7 @@ function HomeAlgorithmsSection() {
                     <ul>
                         <li><strong>Linear search</strong>     - checks each elements in a list until the needed element is found.</li>
                         <li><strong>Binary search</strong>      - searches elements in a sorted data structure(binary tree, array).</li>
-                        <li><strong>Jump search</strong>      -  works only on sorted data structures. Jumps through a certain amount of elements, therefore is aprox. two times faster then linear search.</li>
+                        <li><strong>Jump search</strong>      -  works only on sorted data structures. Jumps through a fixed amount of elements, goes back one element if it has jumped pass the needed element.</li>
                     </ul>
                     <div className='binary-search'>
                         <h5>Binary search</h5>

@@ -8,7 +8,7 @@ import Header from '../Components/Header';
 
 import HomeAlgorithmsSection from '../Components/HomeAlgorithmsSection';
 import HomeDataStructuresSection from '../Components/HomeDataStructuresSection';
-import HomeJavascriptSection from '../Components/HomeJavascriptSection';
+import HomeComparisonSection from '../Components/HomeComparisonSection';
 
 function Home() {
 
@@ -32,8 +32,8 @@ function Home() {
             {/* <MyContext.Provider value={{}}> */}
             <Header username={username} homeView={{homeContent, setHomeContent}}/>
             <div className='home'>
-                {homeContent=='javascript' ? 
-                <HomeJavascriptSection />
+                {homeContent=='comparison' ? 
+                <HomeComparisonSection />
                 :
                     homeContent=='dataStructures' ?
                     <HomeDataStructuresSection />
