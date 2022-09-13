@@ -8,7 +8,7 @@ import Header from '../Components/Header';
 
 import HomeAlgorithmsSection from '../Components/HomeAlgorithmsSection';
 import HomeDataStructuresSection from '../Components/HomeDataStructuresSection';
-import HomeComparisonSection from '../Components/HomeComparisonSection';
+import HomeTestSection from '../Components/HomeTestSection';
 
 function Home() {
 
@@ -32,8 +32,8 @@ function Home() {
             {/* <MyContext.Provider value={{}}> */}
             <Header username={username} homeView={{homeContent, setHomeContent}}/>
             <div className='home'>
-                {homeContent=='comparison' ? 
-                <HomeComparisonSection />
+                {homeContent=='test' ? 
+                <HomeTestSection />
                 :
                     homeContent=='dataStructures' ?
                     <HomeDataStructuresSection />

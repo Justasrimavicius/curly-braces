@@ -4,15 +4,15 @@ function binarySearch(array,searchValue){
     }
     if(array.length==1){                                                        // here too
         if(array[0]==searchValue){
-            return `Element found at ${0} index.`;
+            return `Element found.`;
         } else {
             return 'Element not found.';
         }
     }
 
-    const midPoint = array.length/2;
-    if(array[midPoint]==searchValue){                                           // after getting the midpoint, check if it is
-        return `Element found at ${midPoint} index.`;                           // the value we need
+    const midPoint = Math.round(array.length/2);
+    if(array[midPoint-1]==searchValue){                                           // after getting the midpoint, check if it is
+        return `Element found.`;                                                // the value we need
     } else {
         if(array[midPoint]>searchValue){                                        // if not, check if we need to go left
             return binarySearch(array.slice(0,midPoint),searchValue);           // (if its lower)

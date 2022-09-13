@@ -18,7 +18,9 @@ button{
 button:hover{
     outline: 4px solid aliceblue;
 }
-
+button:focus{
+    outline: 6px solid aliceblue;
+}
 footer{
     position: fixed;
     top: 94%;

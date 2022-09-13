@@ -57,13 +57,13 @@ describe('tests for merge sort',function(){
     //     expect(sortedArray).toEqual('Big chunk of sorted data')
     //     // TIME: 15s(5 tests)
     // })
-    it('merge sort with 500k elements',function(){
-        const array = [];
-        while(array.length<500000){
-            array.push(Math.floor(Math.random()*500000));
-        }
-        const sortedArray = mergeSort(array);
-        expect(sortedArray).toEqual('Big chunk of sorted data')
-        // TIME: 22.1s(5 tests)
-    })
+    // it('merge sort with 500k elements',function(){
+    //     const array = [];
+    //     while(array.length<500000){
+    //         array.push(Math.floor(Math.random()*500000));
+    //     }
+    //     const sortedArray = mergeSort(array);
+    //     expect(sortedArray).toEqual('Big chunk of sorted data')
+    //     // TIME: 22.1s(5 tests)
+    // })
 })

@@ -16,7 +16,7 @@ import './Styles/mainStyles.css';
 import './Styles/FirstAuthView.css';
 import './Styles/HomeStyles.css';
 import './Styles/Header.css';
-import './Styles/HomeComparison.css';
+import './Styles/HomeTest.css';
 import './Styles/HomeDataStructures.css';
 import './Styles/HomeAlgorithms.css';
 

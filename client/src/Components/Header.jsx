@@ -9,7 +9,7 @@ function Header(props) {
             <div className='header-nav'>
                 <Button className='header-nav-button' style={{fontWeight:'bold'}} onClick={()=>{props.homeView.setHomeContent('dataStructures')}}>Data structures</Button>
                 <Button className='header-nav-button' style={{fontWeight:'bold'}} onClick={()=>{props.homeView.setHomeContent('algorithms')}}>Algorithms</Button>
-                <Button className='header-nav-button' style={{fontWeight:'bold'}} onClick={()=>{props.homeView.setHomeContent('comparison')}}>Time comparison</Button>
+                <Button className='header-nav-button' style={{fontWeight:'bold'}} onClick={()=>{props.homeView.setHomeContent('test')}}>Test your knowledge</Button>
             </div>
             <div className='header-user-info'>
                 <h6>asd</h6>

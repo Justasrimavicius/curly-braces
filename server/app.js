@@ -11,11 +11,12 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const passportFn = require('./passport');
 
+let test = require('./routes/test');
 let users = require('./routes/users');
 let app = express();
 
 mongoose.connect('mongodb+srv://justasAdmin:'+process.env.MONGODB_PASSW+'@Cluster.regvrf2.mongodb.net/?retryWrites=true&w=majority',{ useNewUrlParser: true , useUnifiedTopology: true })
-    .then((res)=>{console.log('mongoDB connected')})
+    .then(()=>{console.log('mongoDB connected')})
 
 app.use(cookieParser());
 app.use(morgan('dev'));
@@ -36,7 +37,7 @@ app.use(passport.session());
 //     console.log(req.user);
 //     next();
 // })
-
+app.use('/test',test);
 app.use('/', users);
 
 app.listen(process.env.PORT || 8080,()=>{console.log('backend listening')})
