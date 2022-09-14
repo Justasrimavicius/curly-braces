@@ -8,7 +8,6 @@ function TestForm() {
     const [alert, setAlert] = useState(null);
 
     function checkForm(){
-        document.querySelector('.home-test-section form').submit();
         let tempInputCounter = 0;
         let tempCheckedCounter = 0;
         let checkedBoxes = 0;
@@ -19,7 +18,7 @@ function TestForm() {
                     tempCheckedCounter++;
                     checkedBoxes++;
                 }
-                if(tempInputCounter==4 && tempCheckedCounter >1){
+                if(tempInputCounter == 4 && tempCheckedCounter > 1){
                     setAlert(`You can't select more than one answer!`);
                     return;
                 } else if(tempInputCounter==4){
@@ -35,8 +34,14 @@ function TestForm() {
                     }
                 }
             }
-            console.log('good. post')
-            // document.querySelector('.home-test-section form').submit();
+
+            const userID = document.location.href.slice(-24);
+            const input = document.createElement('input');
+            input.value=userID;
+            console.log(input.value);
+            const form = document.querySelector('.home-test-section form');
+            form.append(input);
+            document.querySelector('.home-test-section form').submit();
         }
 
 
@@ -202,6 +207,10 @@ function TestForm() {
                     <input type='checkbox' name='q10-4'></input>
                 </label>
             </div>
+            <label>Do you want your results to be visible in the leaderboard?
+                <input className='idCheckbox' type='checkbox' name={`id-${document.location.href.slice(-24)}`}></input>
+            </label>
+
             <button type='button' onClick={()=>{checkForm()}}>Finish</button>
             {alert ? <Alert message={alert} setAlert={{setAlert}}/> : null}
         </form>

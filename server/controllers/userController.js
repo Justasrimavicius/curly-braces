@@ -3,7 +3,6 @@ const passport = require('passport');
 const bcrypt = require('bcryptjs');
 
 exports.signup = (req,res,next)=>{
-    console.log(req.body);
     let hashedPassword;
     bcrypt.hash(req.body.password, 10, (err, result) => {
         // if err, do something
@@ -13,7 +12,7 @@ exports.signup = (req,res,next)=>{
         }
         // otherwise, store hashedPassword in DB
         hashedPassword=result;
-        const user = new userModel({username: req.body.username, password: hashedPassword});
+        const user = new userModel({username: req.body.username, password: hashedPassword, correctTestAnswers: -1});
         user.save();
         res.redirect('http://localhost:3000')
       });
@@ -21,18 +20,11 @@ exports.signup = (req,res,next)=>{
 
 exports.login = (req,res,next)=>{
     userModel.findOne({username: req.body.username},function(err,user){
-        console.log('ERROR')
-        console.log(err);
-        console.log('USER')
-        console.log(user);
     if(!user){
         console.log('------------_ERRRRROR_-------------------');
         res.redirect('http://localhost:3000/error/2');
         return;
     }
-    console.log('----------------');
-    console.log(user)
-    console.log(user._id);
     passport.authenticate("local", {
         successRedirect: "http://localhost:3000/home/user-"+user._id,
         failureRedirect: "http://localhost:3000/error/1"
