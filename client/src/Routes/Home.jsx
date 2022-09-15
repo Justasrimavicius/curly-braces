@@ -29,7 +29,6 @@ function Home() {
 
     return (
         <React.Fragment>
-            {/* <MyContext.Provider value={{}}> */}
             <Header username={username} homeView={{homeContent, setHomeContent}}/>
             <div className='home'>
                 {homeContent=='test' ? 
@@ -41,7 +40,6 @@ function Home() {
                     <HomeAlgorithmsSection />
                 }
             </div>
-            {/* </MyContext.Provider> */}
         </React.Fragment>
 
     );

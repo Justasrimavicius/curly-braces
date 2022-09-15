@@ -12,7 +12,7 @@ function Header(props) {
                 <Button className='header-nav-button' style={{fontWeight:'bold'}} onClick={()=>{props.homeView.setHomeContent('test')}}>Test your knowledge</Button>
             </div>
             <div className='header-user-info'>
-                <h6>asd</h6>
+                <Button onClick={()=>{window.location.href='http://localhost:3000'}}>Log out</Button>
             </div>
         </header>
     );

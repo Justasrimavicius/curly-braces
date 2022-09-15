@@ -11,6 +11,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const passportFn = require('./passport');
 
+let leaderboardData = require('./routes/leaderboardData');
 let test = require('./routes/test');
 let users = require('./routes/users');
 let app = express();
@@ -37,6 +38,7 @@ app.use(passport.session());
 //     console.log(req.user);
 //     next();
 // })
+app.get('/leaderboardData',leaderboardData);
 app.use('/test',test);
 app.use('/', users);
 

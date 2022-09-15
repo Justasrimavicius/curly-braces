@@ -25,3 +25,28 @@ header{
 .header-nav-button:hover{
     outline: none;
 }
+
+.header-user-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.header-user-info button{
+    outline: 2px solid rgba(18, 12, 101, 0.424);
+    color: white;
+    margin-right: 10px;
+    transition: 0.5s all;
+}
+.header-user-info button:hover{
+    outline: none;
+    outline: 2px solid rgb(18, 12, 99);
+}
+header span{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    font-size: 1.3rem;
+}

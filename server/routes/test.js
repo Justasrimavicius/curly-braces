@@ -24,33 +24,20 @@ router.post('/', function(req,res,next){
         for(let i = 0; i < 10; i++){ // so all elements of userAnswers are question answers
             if(testAnswers[i][1]==userAnswers[i].charAt(userAnswers[i].length-1)){
                 correctAnswers++;
-                // show leaderboard.
             }
+            
         }
 
     } else { // user didnt check, that he wants his results to be visible, so last element of userAnswers is user ID
         console.log('share test answers')
         for(let i = 0; i < 11; i++){
             if(i==10){
-                console.log(userAnswers[i].slice(3));
-                console.log(correctAnswers);
-                console.log('-----')
                 // save test answers count in users schema.
-                userModel.findOne({_id: ObjectId(`${userAnswers[i].slice(3)}`)},function(err,user){
-                    console.log(user)
-                })
-
                 userModel.updateOne({_id: ObjectId(`${userAnswers[i].slice(3)}`)}, {$set:{correctTestAnswers: correctAnswers}})
                   .then(res=>{ // the document in database does not get updated if a .then() is not attached to it... what?
-                    console.log(res);
                   })
-
-                console.log('aoh');
                 // show leaderboard.
-                userModel.findOne({_id: ObjectId(`${userAnswers[i].slice(3)}`)},function(err,user){
-                    console.log(user)
-                })
-
+                res.redirect('http://localhost:3000/leaderboard');
                 return;
             }
             if(testAnswers[i][1]==userAnswers[i].charAt(userAnswers[i].length-1)){
@@ -58,7 +45,9 @@ router.post('/', function(req,res,next){
             }
         }
     }
-    console.log(correctAnswers);
+    // show leaderboard.
+    console.log('aoh')
+    res.redirect('http://localhost:3000/leaderboard')
     })
 
 module.exports = router;

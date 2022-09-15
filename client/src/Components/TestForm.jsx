@@ -35,12 +35,6 @@ function TestForm() {
                 }
             }
 
-            const userID = document.location.href.slice(-24);
-            const input = document.createElement('input');
-            input.value=userID;
-            console.log(input.value);
-            const form = document.querySelector('.home-test-section form');
-            form.append(input);
             document.querySelector('.home-test-section form').submit();
         }
 
