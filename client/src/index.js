@@ -5,7 +5,6 @@ import FirstAuthView from './Routes/FirstAuthView';
 import Home from './Routes/Home';
 import Error from './Routes/Error';
 import Footer from './Components/Footer';
-import Leaderboard from './Components/Leaderboard';
 
 import {
   BrowserRouter,
@@ -30,7 +29,7 @@ root.render(
           <Route path='/' exact element ={<FirstAuthView />} />
           <Route path='/home/user-:id' element ={<Home />} />
           <Route path='/error/:errorid' element ={<Error />} />
-          <Route path='/leaderboard' element ={<Leaderboard />} />
+          <Route path='/home/user-:id/leaderboard' element ={<Home props={'leaderboard'} />} />
         </Routes>
 
     <Footer />

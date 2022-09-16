@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Alert from './Alert';
 
 function TestForm() {
-
     const [alert, setAlert] = useState(null);
 
     function checkForm(){
@@ -35,7 +34,14 @@ function TestForm() {
                 }
             }
 
-            document.querySelector('.home-test-section form').submit();
+            const form = document.querySelector('.home-test-section form');
+            const idInput = document.createElement('input');
+            idInput.name='userID';
+            idInput.value=`${document.location.href.slice(-24)}`;
+            form.append(idInput);
+
+
+            form.submit();
         }
 
 
@@ -201,9 +207,6 @@ function TestForm() {
                     <input type='checkbox' name='q10-4'></input>
                 </label>
             </div>
-            <label>Do you want your results to be visible in the leaderboard?
-                <input className='idCheckbox' type='checkbox' name={`id-${document.location.href.slice(-24)}`}></input>
-            </label>
 
             <button type='button' onClick={()=>{checkForm()}}>Finish</button>
             {alert ? <Alert message={alert} setAlert={{setAlert}}/> : null}

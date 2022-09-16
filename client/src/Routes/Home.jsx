@@ -9,35 +9,30 @@ import Header from '../Components/Header';
 import HomeAlgorithmsSection from '../Components/HomeAlgorithmsSection';
 import HomeDataStructuresSection from '../Components/HomeDataStructuresSection';
 import HomeTestSection from '../Components/HomeTestSection';
+import Leaderboard from '../Components/Leaderboard';
 
-function Home() {
+function Home(props) {
 
     const [username, setUsername] = useState('');
 
-    const [homeContent, setHomeContent] = useState(null);
-
-    useEffect(()=>{
-        const userID = window.location.href.slice(-24);
-        fetch('http://localhost:8080/user-'+userID)
-          .then(result=>{
-            result.json()
-              .then(finalData=>{
-                setUsername(finalData.username);
-            })
-          })
-    },[])
+    const [homeContent, setHomeContent] = useState('dataStructures');
 
     return (
         <React.Fragment>
-            <Header username={username} homeView={{homeContent, setHomeContent}}/>
+            <Header homeView={{homeContent, setHomeContent}}/>
             <div className='home'>
-                {homeContent=='test' ? 
-                <HomeTestSection />
+                {props.props=='leaderboard' ?
+                <Leaderboard />
                 :
-                    homeContent=='dataStructures' ?
-                    <HomeDataStructuresSection />
+                    homeContent=='test' ? 
+                    <HomeTestSection />
                     :
-                    <HomeAlgorithmsSection />
+                        homeContent=='dataStructures' ?
+                        <HomeDataStructuresSection />
+                        :
+                            homeContent=='algorithms' ?
+                            <HomeAlgorithmsSection />
+                            : null
                 }
             </div>
         </React.Fragment>

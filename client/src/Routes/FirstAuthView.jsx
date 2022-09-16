@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
+import Alert from "../Components/Alert";
 
 function FirstAuthView() {
 
   const [signupView, loadSignupView] = useState(null);
   const [loginView, loadLoginView] = useState(null);
 
-  const [succesfulSignup, SetSuccesfulSignup] = useState(null);
+  const [alert, setAlert] = useState(null);
 
   function SignupFormSubmit(){
     const form = document.querySelector('.firstAuthView-forms.signup form');
@@ -44,7 +45,7 @@ function FirstAuthView() {
     }
     
     if(form.reportValidity()){
-      SetSuccesfulSignup(true);
+      setAlert('Signup succesful! Please log in with the credentials now')
       setTimeout(() => {
         form.submit();
       }, 5000);
@@ -56,15 +57,6 @@ function FirstAuthView() {
 
     form.submit();
   }
-
-  useEffect(()=>{
-    //fade in of the popup
-    if(succesfulSignup!=null){
-      setTimeout(() => {
-        document.querySelector('.succesful-signup-popup').classList.add('fade-in');
-      }, 300); 
-    }
-  },[succesfulSignup])
 
   function Load(){
     if(signupView!=null){
@@ -87,7 +79,7 @@ function FirstAuthView() {
             <button type="button" onClick={()=>{SignupFormSubmit()}}>Register</button>
           </form>
           <button onClick={()=>{loadSignupView(null)}}>Go back from signup</button>
-          {succesfulSignup!=null ? <div className="succesful-signup-popup">Signup succesful! Please log in with the credentials now</div> : null}
+          {alert ? <Alert message={alert} setAlert={{setAlert}}/> : null}
         </div>
       )
     } else if(loginView!=null){
@@ -116,8 +108,6 @@ function FirstAuthView() {
             <button onClick={()=>{loadLoginView(true)}}>Login</button>
             <button onClick={()=>{loadSignupView(true)}}>Signup</button>
           </div>
-          <h4>Proceed unauthenticated</h4>
-          <button>Continue</button>
         </div>
       )
     }
