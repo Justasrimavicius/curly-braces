@@ -12,6 +12,3 @@ Data structures and their implementation from scratch(stacks, queues, linked lis
 Algorithms, their implementation from scratch, comparison, explanation why some are better than others(sorting algorithms, 
 search algorithms, binary tree traversal methods);
 Deeper backend knowledge, MVC principle(express middleware, password encoding, communication between client and server, ...).
-
-
-
