@@ -1,8 +1,13 @@
 import React from 'react';
 
 import { Button } from '@mui/material';
+import { useEffect } from 'react';
 
 function Header(props) {
+    useEffect(()=>{
+
+        console.log(props.homeView.homeView)
+    },[props.homeView.homeView])
     return (
         <header>
             <span>Curly Braces</span>

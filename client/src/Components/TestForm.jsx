@@ -181,7 +181,7 @@ function TestForm() {
                 <label>It is better space-wise.
                     <input type='checkbox' name='q9-1'></input>
                 </label>
-                <label>It does not need to iterate through all of the elements in worst case scenarios. THIS
+                <label>It does not need to iterate through all of the elements in the worst case scenario. THIS
                     <input type='checkbox' name='q9-2'></input>
                 </label>
                 <label>They are equal in all scenarios.

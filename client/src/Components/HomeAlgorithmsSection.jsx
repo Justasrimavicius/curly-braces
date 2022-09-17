@@ -8,7 +8,7 @@ function HomeAlgorithmsSection() {
                 <h3>Sorting algorithms</h3>
                 <div className='a-text'>
                     The first algorithms worth knowing about are sorting algorithms.
-                    There are a lot of sorting algorithms. Some of them work on only linear data(example - arrays), some of work on 
+                    There are a lot of sorting algorithms. Some of them work only on linear data(example - arrays), some work on 
                     non-linear data, and some on both. Here are some sorting algorithms examples:
                     <ul>
                         <li><strong>Bubble sort</strong>     - iterates through an array and replaces elements in order.</li>

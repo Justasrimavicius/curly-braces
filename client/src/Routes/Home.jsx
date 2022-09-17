@@ -10,13 +10,17 @@ import HomeAlgorithmsSection from '../Components/HomeAlgorithmsSection';
 import HomeDataStructuresSection from '../Components/HomeDataStructuresSection';
 import HomeTestSection from '../Components/HomeTestSection';
 import Leaderboard from '../Components/Leaderboard';
+import HomeLandingSection from '../Components/HomeLandingSection';
 
 function Home(props) {
 
     const [username, setUsername] = useState('');
 
-    const [homeContent, setHomeContent] = useState('dataStructures');
+    const [homeContent, setHomeContent] = useState('');
 
+    useEffect(()=>{
+        console.log(homeContent);
+    },[homeContent])
     return (
         <React.Fragment>
             <Header homeView={{homeContent, setHomeContent}}/>
@@ -32,7 +36,7 @@ function Home(props) {
                         :
                             homeContent=='algorithms' ?
                             <HomeAlgorithmsSection />
-                            : null
+                            : <HomeLandingSection />
                 }
             </div>
         </React.Fragment>
